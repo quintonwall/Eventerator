@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58B5149F651B5FE0C6F622E6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F635E7471DA0501CFA4AE92D /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E7148B1F1BC2DE980084DF99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B1E1BC2DE980084DF99 /* AppDelegate.swift */; };
 		E7148B211BC2DE980084DF99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B201BC2DE980084DF99 /* ViewController.swift */; };
 		E7148B241BC2DE980084DF99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7148B221BC2DE980084DF99 /* Main.storyboard */; };
@@ -15,6 +16,10 @@
 		E7148B2C1BC2DE980084DF99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7148B2A1BC2DE980084DF99 /* LaunchScreen.storyboard */; };
 		E7148B371BC2DE980084DF99 /* EventeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B361BC2DE980084DF99 /* EventeratorTests.swift */; };
 		E7148B421BC2DE980084DF99 /* EventeratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B411BC2DE980084DF99 /* EventeratorUITests.swift */; };
+		E7F6B99C1BC316E1007EA8CF /* SessionStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99B1BC316E1007EA8CF /* SessionStatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E7F6B9A01BC31E82007EA8CF /* RateSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E7F6B9A21BC31E90007EA8CF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B9A11BC31E90007EA8CF /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DBAAAB6F02A42B165EB81D8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C10206AABC7CBA14AF61B77C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E7148B1B1BC2DE980084DF99 /* Eventerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7148B1E1BC2DE980084DF99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7148B201BC2DE980084DF99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +56,11 @@
 		E7148B3D1BC2DE980084DF99 /* EventeratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventeratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7148B411BC2DE980084DF99 /* EventeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventeratorUITests.swift; sourceTree = "<group>"; };
 		E7148B431BC2DE980084DF99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7F6B99B1BC316E1007EA8CF /* SessionStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStatsViewController.swift; sourceTree = "<group>"; };
+		E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSessionViewController.swift; sourceTree = "<group>"; };
+		E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateSessionViewController.swift; sourceTree = "<group>"; };
+		E7F6B9A11BC31E90007EA8CF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F635E7471DA0501CFA4AE92D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B5149F651B5FE0C6F622E6 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		214290F1C097B69FEF144631 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DBAAAB6F02A42B165EB81D8 /* Pods.debug.xcconfig */,
+				C10206AABC7CBA14AF61B77C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E7148B121BC2DE980084DF99 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,8 @@
 				E7148B351BC2DE980084DF99 /* EventeratorTests */,
 				E7148B401BC2DE980084DF99 /* EventeratorUITests */,
 				E7148B1C1BC2DE980084DF99 /* Products */,
+				214290F1C097B69FEF144631 /* Pods */,
+				FF9FA1E437884F37C8F049C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +130,10 @@
 				E7148B2A1BC2DE980084DF99 /* LaunchScreen.storyboard */,
 				E7148B2D1BC2DE980084DF99 /* Info.plist */,
 				E7148B251BC2DE980084DF99 /* Eventerator.xcdatamodeld */,
+				E7F6B99B1BC316E1007EA8CF /* SessionStatsViewController.swift */,
+				E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */,
+				E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */,
+				E7F6B9A11BC31E90007EA8CF /* SettingsViewController.swift */,
 			);
 			path = Eventerator;
 			sourceTree = "<group>";
@@ -128,6 +156,14 @@
 			path = EventeratorUITests;
 			sourceTree = "<group>";
 		};
+		FF9FA1E437884F37C8F049C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F635E7471DA0501CFA4AE92D /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7148B461BC2DE980084DF99 /* Build configuration list for PBXNativeTarget "Eventerator" */;
 			buildPhases = (
+				5CCA7FC39D25718F1E209A78 /* Check Pods Manifest.lock */,
 				E7148B171BC2DE980084DF99 /* Sources */,
 				E7148B181BC2DE980084DF99 /* Frameworks */,
 				E7148B191BC2DE980084DF99 /* Resources */,
+				ADCEF064B58E753F63A4832D /* Copy Pods Resources */,
+				19E6A9611E2BD594D1506078 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,13 +292,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19E6A9611E2BD594D1506078 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CCA7FC39D25718F1E209A78 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ADCEF064B58E753F63A4832D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7148B171BC2DE980084DF99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E7148B211BC2DE980084DF99 /* ViewController.swift in Sources */,
+				E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */,
+				E7F6B9A21BC31E90007EA8CF /* SettingsViewController.swift in Sources */,
 				E7148B271BC2DE980084DF99 /* Eventerator.xcdatamodeld in Sources */,
+				E7F6B9A01BC31E82007EA8CF /* RateSessionViewController.swift in Sources */,
+				E7F6B99C1BC316E1007EA8CF /* SessionStatsViewController.swift in Sources */,
 				E7148B1F1BC2DE980084DF99 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +446,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -393,6 +485,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -400,6 +493,7 @@
 		};
 		E7148B471BC2DE980084DF99 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DBAAAB6F02A42B165EB81D8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Eventerator/Info.plist;
@@ -411,6 +505,7 @@
 		};
 		E7148B481BC2DE980084DF99 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C10206AABC7CBA14AF61B77C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Eventerator/Info.plist;
@@ -487,6 +582,7 @@
 				E7148B481BC2DE980084DF99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7148B491BC2DE980084DF99 /* Build configuration list for PBXNativeTarget "EventeratorTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +591,7 @@
 				E7148B4B1BC2DE980084DF99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7148B4C1BC2DE980084DF99 /* Build configuration list for PBXNativeTarget "EventeratorUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +600,7 @@
 				E7148B4E1BC2DE980084DF99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
