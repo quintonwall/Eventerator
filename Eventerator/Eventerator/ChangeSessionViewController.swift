@@ -7,9 +7,41 @@
 //
 
 import UIKit
+import Alamofire
 
 class ChangeSessionViewController: UIViewController {
 
+    
+    @IBOutlet weak var sessionNameTF: UITextField!
+    @IBOutlet weak var speakerNameTF: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if !defaults.boolForKey(Constants.LOGGEDIN) {
+            self.performSegueWithIdentifier("login", sender: self)
+        }
+        
+    }
+    
+    @IBAction func searchTapped(sender: AnyObject) {
+        
+        
+        Alamofire.request(.GET, "/v34.0/sobjects/SObject/Session__c")
+            .responseString { response in
+                print("Response String: \(response.result.value)")
+            }
+            .responseJSON { response in
+                print("Response JSON: \(response.result.value)")
+        }
+        
+    }
+        
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

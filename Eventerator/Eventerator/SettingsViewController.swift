@@ -10,10 +10,30 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if !defaults.boolForKey(Constants.LOGGEDIN) {
+            self.performSegueWithIdentifier("login", sender: self)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
      
+    }
+    
+    @IBAction func logoutTapped(sender: AnyObject) {
+       let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(false, forKey: Constants.LOGGEDIN)
+        defaults.setValue("", forKey: Constants.AUTH_TOKEN)
+        self.performSegueWithIdentifier("login", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

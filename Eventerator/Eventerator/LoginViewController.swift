@@ -8,6 +8,7 @@
 
 import UIKit
 import OAuthSwift
+import Alamofire
 
 class LoginViewController: UIViewController {
 
@@ -44,6 +45,13 @@ class LoginViewController: UIViewController {
              let defaults = NSUserDefaults.standardUserDefaults()
              defaults.setBool(true, forKey: Constants.LOGGEDIN)
              defaults.setValue(credential.oauth_token, forKey: Constants.AUTH_TOKEN)
+            
+            var headers = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
+            headers["Authorization"] = credential.oauth_token
+            
+            let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            configuration.HTTPAdditionalHeaders = headers
+           
             self.dismissViewControllerAnimated(true, completion: nil)
             
             }, failure: {(error:NSError!) -> Void in

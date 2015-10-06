@@ -10,6 +10,18 @@ import UIKit
 
 class RateSessionViewController: UIViewController {
 
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if !defaults.boolForKey(Constants.LOGGEDIN) {
+            self.performSegueWithIdentifier("login", sender: self)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

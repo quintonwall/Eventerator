@@ -15,9 +15,9 @@ class ViewController: UIViewController {
  
     
     override func viewDidAppear(animated: Bool) {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        super.viewDidAppear(animated)
         
-        //defaults.setBool(false, forKey: Constants.LOGGEDIN)
+        let defaults = NSUserDefaults.standardUserDefaults()
         
         if !defaults.boolForKey(Constants.LOGGEDIN) {
             self.performSegueWithIdentifier("login", sender: self)
@@ -32,24 +32,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-       
-        
-        /*
-     
-                let defaults = NSUserDefaults.standardUserDefaults()
-                //defaults.setBool(false, forKey: Constants.LOGGEDIN)
-                
-                if defaults.boolForKey(Constants.LOGGEDIN) {
-                    self.performSegueWithIdentifier("settings", sender: self)
-                } else {
-                    self.performSegueWithIdentifier("login", sender: self)
-                }
-            }
-            
-        }
-        
-        self.navigationItem.titleView = menuView
-        */
+    
     }
 
     override func didReceiveMemoryWarning() {
