@@ -10,7 +10,7 @@ import Foundation
 
 
 import UIKit
-import BTNavigationDropdownMenu
+
 
 class SessionStatsViewController: UIViewController {
     
@@ -18,12 +18,6 @@ class SessionStatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
-        
-        self.preferredContentSize = CGSizeMake(screenWidth * 0.90, screenHeight * 0.90)
-
     }
     
     override func didReceiveMemoryWarning() {

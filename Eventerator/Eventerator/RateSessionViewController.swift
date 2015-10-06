@@ -13,13 +13,7 @@ class RateSessionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        // Do any additional setup after loading the view.
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
-        
-        self.preferredContentSize = CGSizeMake(screenWidth * 0.90, screenHeight * 0.90)
+       
     }
 
     override func didReceiveMemoryWarning() {

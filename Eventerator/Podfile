@@ -1,0 +1,3 @@
+use_frameworks!
+pod 'BTNavigationDropdownMenu'
+pod "OAuthSwift", "~> 0.4.6"

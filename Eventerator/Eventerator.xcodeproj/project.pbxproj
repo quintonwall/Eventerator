@@ -20,6 +20,8 @@
 		E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E7F6B9A01BC31E82007EA8CF /* RateSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E7F6B9A21BC31E90007EA8CF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B9A11BC31E90007EA8CF /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E7F6B9A41BC44075007EA8CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B9A31BC44075007EA8CF /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		E7F6B9A61BC44246007EA8CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B9A51BC44246007EA8CF /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSessionViewController.swift; sourceTree = "<group>"; };
 		E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateSessionViewController.swift; sourceTree = "<group>"; };
 		E7F6B9A11BC31E90007EA8CF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E7F6B9A31BC44075007EA8CF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7F6B9A51BC44246007EA8CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F635E7471DA0501CFA4AE92D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,6 +138,8 @@
 				E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */,
 				E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */,
 				E7F6B9A11BC31E90007EA8CF /* SettingsViewController.swift */,
+				E7F6B9A31BC44075007EA8CF /* Constants.swift */,
+				E7F6B9A51BC44246007EA8CF /* LoginViewController.swift */,
 			);
 			path = Eventerator;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7F6B9A61BC44246007EA8CF /* LoginViewController.swift in Sources */,
 				E7148B211BC2DE980084DF99 /* ViewController.swift in Sources */,
 				E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */,
 				E7F6B9A21BC31E90007EA8CF /* SettingsViewController.swift in Sources */,
@@ -352,6 +359,7 @@
 				E7F6B9A01BC31E82007EA8CF /* RateSessionViewController.swift in Sources */,
 				E7F6B99C1BC316E1007EA8CF /* SessionStatsViewController.swift in Sources */,
 				E7148B1F1BC2DE980084DF99 /* AppDelegate.swift in Sources */,
+				E7F6B9A41BC44075007EA8CF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
