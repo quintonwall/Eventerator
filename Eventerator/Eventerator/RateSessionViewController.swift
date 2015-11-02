@@ -14,11 +14,10 @@ class RateSessionViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        if !defaults.boolForKey(Constants.LOGGEDIN) {
+        if SFUserAccountManager.sharedInstance().currentUser.userName.isEmpty {
             self.performSegueWithIdentifier("login", sender: self)
         }
+
         
     }
     

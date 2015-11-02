@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import OAuthSwift
+
 import Alamofire
 
-class LoginViewController: UIViewController {
+
+class LoginViewController: UIViewController,SFAuthenticationManagerDelegate {
 
     
     @IBOutlet weak var loginButton: UIButton!
@@ -18,8 +19,16 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //make window 30% the size of the app to give us a little popup effect.
         self.view.bounds = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width * 0.30, UIScreen.mainScreen().bounds.height * 0.30)
         
+          SFAuthenticationManager.sharedManager().addDelegate(self)
+        
+        //button formatting
+        loginButton.backgroundColor = UIColor.clearColor()
+        loginButton.layer.cornerRadius = 5
+        loginButton.layer.borderWidth = 1
+        loginButton.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     override func viewDidLoad() {
@@ -28,34 +37,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(sender: AnyObject) {
-        doOAuthSalesforce()
+        SalesforceSDKManager.sharedManager().launch()
     }
     
-    func doOAuthSalesforce(){
-        let oauthswift = OAuth2Swift(
-            consumerKey:    Constants.SALESFORCE["consumerKey"]!,
-            consumerSecret: Constants.SALESFORCE["consumerSecret"]!,
-            authorizeUrl:   "https://login.salesforce.com/services/oauth2/authorize",
-            accessTokenUrl: "https://login.salesforce.com/services/oauth2/token",
-            responseType:   "code"
-        )
-        let state: String = generateStateWithLength(20) as String
-        oauthswift.authorizeWithCallbackURL( NSURL(string: "oauth-swift://oauth-callback/salesforce")!, scope: "full", state: state, success: {
-            credential, response, parameters in
-             let defaults = NSUserDefaults.standardUserDefaults()
-             defaults.setBool(true, forKey: Constants.LOGGEDIN)
-             defaults.setValue(credential.oauth_token, forKey: Constants.AUTH_TOKEN)
-            
-            var headers = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
-            headers["Authorization"] = credential.oauth_token
-            
-            let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-            configuration.HTTPAdditionalHeaders = headers
-           
-            self.dismissViewControllerAnimated(true, completion: nil)
-            
-            }, failure: {(error:NSError!) -> Void in
-                print(error.localizedDescription)
-        })
+    func authManagerDidFinish(manager: SFAuthenticationManager!, info: SFOAuthInfo!) {
+        
+        if  SFAuthenticationManager.sharedManager().haveValidSession {
+            //call the segue with the name you give it in the storyboard editor
+            self.performSegueWithIdentifier("loggedin", sender: nil)
+        }
     }
 }
