@@ -9,13 +9,18 @@
 import UIKit
 import Alamofire
 
-class ChangeSessionViewController: UIViewController {
+
+
+
+class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate{
 
     
     @IBOutlet weak var resultsTable: UITableView!
     @IBOutlet weak var sessionNameTF: UITextField!
     @IBOutlet weak var speakerNameTF: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    
+    var jsonResults : Eventerator.JSON?
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,10 +33,24 @@ class ChangeSessionViewController: UIViewController {
         speakerNameTF.enabled = false
         speakerNameTF.layer.borderWidth = 1
         speakerNameTF.layer.borderColor = UIColor.whiteColor().CGColor
+        
 
         sessionNameTF.layer.borderWidth = 1
         sessionNameTF.layer.borderColor = UIColor.whiteColor().CGColor
+        sessionNameTF.becomeFirstResponder()  //set initial focus
         
+        //register to handle RETURN
+        speakerNameTF.delegate = self
+        sessionNameTF.delegate = self
+        
+        resultsTable.delegate = self
+        resultsTable.dataSource = self
+        
+    }
+    
+     func textFieldShouldReturn(textField: UITextField) -> Bool{
+        searchTapped(self)
+        return true
     }
     
     @IBAction func searchTapped(sender: AnyObject) {
@@ -44,23 +63,19 @@ class ChangeSessionViewController: UIViewController {
             print("Problem getting sessions \(error)")
             
             }) { response in  //success
-                //map session data here.
-                print("SUCCESS: \(response)")
-        }
+                
+               self.jsonResults = JSON(response)
+                
+                  //example of looping salesforce results using swiftyjson
+                  // for (index,subJson):(String, JSON) in self.jsonResults!["records"] {
+                  //  var s = subJson["Session_Name__c"]
+                  //}
 
-        
-        /*
-        Alamofire.request(.GET, "/v34.0/sobjects/SObject/Session__c")
-            .responseString { response in
-                print("Response String: \(response.result.value)")
-            }
-            .responseJSON { response in
-                print("Response JSON: \(response.result.value)")
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.resultsTable.reloadData()
+                })
         }
-        */
-        
     }
-        
     
     
     override func viewDidLoad() {
@@ -84,5 +99,32 @@ class ChangeSessionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    // MARK Table Delegates
+    
+    
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if jsonResults == nil {
+            return 1
+        } else {
+            return self.jsonResults!["totalSize"].int!
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("SessionCell", forIndexPath: indexPath) as! SessionTableViewCell
+        
+       cell.sessionId = jsonResults!["records"][indexPath.row]["Id"].string
+       cell.sessionName.text = jsonResults!["records"][indexPath.row]["Session_Name__c"].string
+       cell.rating.text = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].string
+ 
+        return cell
+    }
 }
