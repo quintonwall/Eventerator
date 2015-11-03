@@ -12,6 +12,7 @@ import Alamofire
 class ChangeSessionViewController: UIViewController {
 
     
+    @IBOutlet weak var resultsTable: UITableView!
     @IBOutlet weak var sessionNameTF: UITextField!
     @IBOutlet weak var speakerNameTF: UITextField!
     @IBOutlet weak var searchButton: UIButton!
@@ -23,11 +24,32 @@ class ChangeSessionViewController: UIViewController {
             self.performSegueWithIdentifier("login", sender: self)
         }
         
+        //Name search not yet implemented
+        speakerNameTF.enabled = false
+        speakerNameTF.layer.borderWidth = 1
+        speakerNameTF.layer.borderColor = UIColor.whiteColor().CGColor
+
+        sessionNameTF.layer.borderWidth = 1
+        sessionNameTF.layer.borderColor = UIColor.whiteColor().CGColor
+        
     }
     
     @IBAction func searchTapped(sender: AnyObject) {
         
+        //SessionDelegate.searchForSession(speakerNameTF.text!, sessionname: sessionNameTF.text!)
         
+        let request = SFRestAPI.sharedInstance().requestForQuery("select Average_Ratings__c, Event__r.Event_Name__c, Id, Name, Num_Ratings__c, Session_Name__c, SystemModstamp, Total_Ratings__c from Session__c WHERE Session_Name__c like \'%\(sessionNameTF.text!)%\' ORDER BY Session_Name__c")
+        
+        SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
+            print("Problem getting sessions \(error)")
+            
+            }) { response in  //success
+                //map session data here.
+                print("SUCCESS: \(response)")
+        }
+
+        
+        /*
         Alamofire.request(.GET, "/v34.0/sobjects/SObject/Session__c")
             .responseString { response in
                 print("Response String: \(response.result.value)")
@@ -35,6 +57,7 @@ class ChangeSessionViewController: UIViewController {
             .responseJSON { response in
                 print("Response JSON: \(response.result.value)")
         }
+        */
         
     }
         

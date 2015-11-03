@@ -95,51 +95,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-EK-kdg">
-                                <rect key="frame" x="170" y="227" width="260" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="d4p-AA-B28"/>
-                                    <constraint firstAttribute="width" constant="260" id="tD5-AX-Aw7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Speaker Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbC-ch-t2A">
-                                <rect key="frame" x="170" y="278" width="260" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Speaker Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xbC-ch-t2A">
+                                <rect key="frame" x="170" y="193" width="260" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6rp-Vx-P6I"/>
                                     <constraint firstAttribute="width" constant="260" id="Hdl-yE-C2C"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdw-sI-I6w">
-                                <rect key="frame" x="228" y="329" width="144" height="30"/>
-                                <color key="backgroundColor" red="0.62769931550000002" green="0.79652881620000004" blue="0.92839163540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdw-sI-I6w">
+                                <rect key="frame" x="228" y="252" width="144" height="30"/>
+                                <color key="backgroundColor" red="0.0049800067209999997" green="0.63012075420000002" blue="0.87748748060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="F79-DS-UKZ"/>
                                     <constraint firstAttribute="width" constant="144" id="FxG-3f-7gg"/>
                                 </constraints>
-                                <state key="normal" title="Search"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="searchTapped:" destination="VM5-ed-Hbx" eventType="touchUpInside" id="5dx-Er-SR2"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P11-zF-nSC">
+                                <rect key="frame" x="0.0" y="297" width="600" height="254"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-EK-kdg">
+                                <rect key="frame" x="170" y="123" width="260" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="d4p-AA-B28"/>
+                                    <constraint firstAttribute="width" constant="260" id="tD5-AX-Aw7"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62769931550000002" green="0.79652881620000004" blue="0.92839163540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7Y9-EK-kdg" firstAttribute="centerX" secondItem="4Sp-dt-JRr" secondAttribute="centerX" id="4jT-2X-tnY"/>
-                            <constraint firstItem="7Y9-EK-kdg" firstAttribute="top" secondItem="HBj-aL-O1Y" secondAttribute="bottom" constant="163" id="AHc-CT-T8a"/>
+                            <constraint firstItem="P11-zF-nSC" firstAttribute="top" secondItem="zdw-sI-I6w" secondAttribute="bottom" constant="30" id="A9J-Am-cef"/>
+                            <constraint firstItem="7Y9-EK-kdg" firstAttribute="top" secondItem="HBj-aL-O1Y" secondAttribute="bottom" constant="59" id="AHc-CT-T8a"/>
                             <constraint firstItem="7Y9-EK-kdg" firstAttribute="centerX" secondItem="4Sp-dt-JRr" secondAttribute="centerX" id="DHk-NZ-wT2"/>
                             <constraint firstItem="xbC-ch-t2A" firstAttribute="centerX" secondItem="4Sp-dt-JRr" secondAttribute="centerX" id="Ue0-M1-fHD"/>
-                            <constraint firstItem="xbC-ch-t2A" firstAttribute="top" secondItem="7Y9-EK-kdg" secondAttribute="bottom" constant="21" id="cvI-Bt-LTJ"/>
-                            <constraint firstItem="zdw-sI-I6w" firstAttribute="top" secondItem="xbC-ch-t2A" secondAttribute="bottom" constant="21" id="pCR-q4-LPA"/>
+                            <constraint firstItem="P11-zF-nSC" firstAttribute="width" secondItem="4Sp-dt-JRr" secondAttribute="width" id="Z7G-DR-val"/>
+                            <constraint firstItem="xbC-ch-t2A" firstAttribute="top" secondItem="7Y9-EK-kdg" secondAttribute="bottom" constant="40" id="cvI-Bt-LTJ"/>
+                            <constraint firstItem="Dsc-Fx-cuh" firstAttribute="top" secondItem="P11-zF-nSC" secondAttribute="bottom" id="iEB-ha-JNd"/>
+                            <constraint firstItem="zdw-sI-I6w" firstAttribute="top" secondItem="xbC-ch-t2A" secondAttribute="bottom" constant="32" id="pCR-q4-LPA"/>
+                            <constraint firstItem="P11-zF-nSC" firstAttribute="centerX" secondItem="4Sp-dt-JRr" secondAttribute="centerX" id="s15-cW-5Am"/>
                             <constraint firstItem="zdw-sI-I6w" firstAttribute="centerX" secondItem="4Sp-dt-JRr" secondAttribute="centerX" id="vM6-ff-lni"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PPg-kB-sJq"/>
                     <connections>
+                        <outlet property="resultsTable" destination="P11-zF-nSC" id="i7z-se-1Up"/>
                         <outlet property="searchButton" destination="zdw-sI-I6w" id="ioH-RU-diS"/>
                         <outlet property="sessionNameTF" destination="7Y9-EK-kdg" id="6H3-LN-kZN"/>
                         <outlet property="speakerNameTF" destination="xbC-ch-t2A" id="kl7-A2-yHA"/>
@@ -230,7 +243,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="LMY-OC-KgM">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CjV-0n-ua2" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="CjV-0n-ua2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1Ua-Ab-2J9">
                         <autoresizingMask key="autoresizingMask"/>
@@ -333,7 +346,7 @@
         <image name="stats" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CKh-2I-nUV"/>
-        <segue reference="yu9-2k-gf3"/>
+        <segue reference="i8h-xz-xqG"/>
+        <segue reference="Snt-Tq-tvZ"/>
     </inferredMetricsTieBreakers>
 </document>
