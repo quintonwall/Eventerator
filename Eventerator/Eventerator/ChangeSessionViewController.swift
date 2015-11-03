@@ -21,11 +21,12 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var searchButton: UIButton!
     
     var jsonResults : Eventerator.JSON?
+    var selectedSession : Session?
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if SFUserAccountManager.sharedInstance().currentUser.userName.isEmpty {
+        if  !SFAuthenticationManager.sharedManager().haveValidSession {
             self.performSegueWithIdentifier("login", sender: self)
         }
         
@@ -90,15 +91,17 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "ratesession") {
+            let svc = segue.destinationViewController as! RateSessionViewController
+            svc.currentSession = selectedSession
+            
+        }
     }
-    */
+    
     
     
     // MARK Table Delegates
@@ -126,5 +129,15 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
        cell.rating.text = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].string
  
         return cell
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        NSLog("You selected cell number: \(indexPath.row)!")
+        
+        selectedSession = Session()
+        selectedSession?.name = jsonResults!["records"][indexPath.row]["Session_Name__c"].string
+        selectedSession?.avgRating = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].string
+        
+        self.performSegueWithIdentifier("ratesession", sender: self)
     }
 }

@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if SFUserAccountManager.sharedInstance().currentUser.userName.isEmpty {
+        if  !SFAuthenticationManager.sharedManager().haveValidSession {
             self.performSegueWithIdentifier("login", sender: self)
         }
 

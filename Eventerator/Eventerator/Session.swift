@@ -15,5 +15,5 @@ class Session: NSObject {
     var eventName: String?
     var name : String?
     var speakers = [String]()
-    var avgRating: Double = 0.0
+    var avgRating: String?
 }
