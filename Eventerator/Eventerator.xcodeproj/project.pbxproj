@@ -17,6 +17,10 @@
 		E7148B371BC2DE980084DF99 /* EventeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B361BC2DE980084DF99 /* EventeratorTests.swift */; };
 		E7148B421BC2DE980084DF99 /* EventeratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B411BC2DE980084DF99 /* EventeratorUITests.swift */; };
 		E764355D1BE812E000BC6E98 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764355C1BE812E000BC6E98 /* HomeController.swift */; };
+		E764355F1BE82C3800BC6E98 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764355E1BE82C3800BC6E98 /* SessionDelegate.swift */; };
+		E76435611BE82DD200BC6E98 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76435601BE82DD200BC6E98 /* Session.swift */; };
+		E764357B1BE9160100BC6E98 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764357A1BE9160100BC6E98 /* SwiftyJSON.swift */; };
+		E764357D1BE91CF900BC6E98 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764357C1BE91CF900BC6E98 /* SessionTableViewCell.swift */; };
 		E76C0C161BE7F55900064F23 /* blah.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C0C151BE7F55900064F23 /* blah.m */; };
 		E7F6B99C1BC316E1007EA8CF /* SessionStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99B1BC316E1007EA8CF /* SessionStatsViewController.swift */; };
 		E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */; };
@@ -62,6 +66,10 @@
 		E7148B411BC2DE980084DF99 /* EventeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventeratorUITests.swift; sourceTree = "<group>"; };
 		E7148B431BC2DE980084DF99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E764355C1BE812E000BC6E98 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		E764355E1BE82C3800BC6E98 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		E76435601BE82DD200BC6E98 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E764357A1BE9160100BC6E98 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		E764357C1BE91CF900BC6E98 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		E76C0C141BE7F55800064F23 /* Eventerator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eventerator-Bridging-Header.h"; sourceTree = "<group>"; };
 		E76C0C151BE7F55900064F23 /* blah.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blah.m; sourceTree = "<group>"; };
 		E7F6B99B1BC316E1007EA8CF /* SessionStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStatsViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 		E7148B1D1BC2DE980084DF99 /* Eventerator */ = {
 			isa = PBXGroup;
 			children = (
+				E764357A1BE9160100BC6E98 /* SwiftyJSON.swift */,
 				E7148B1E1BC2DE980084DF99 /* AppDelegate.swift */,
 				E7148B201BC2DE980084DF99 /* ViewController.swift */,
 				E7148B221BC2DE980084DF99 /* Main.storyboard */,
@@ -148,6 +157,9 @@
 				E76C0C151BE7F55900064F23 /* blah.m */,
 				E76C0C141BE7F55800064F23 /* Eventerator-Bridging-Header.h */,
 				E764355C1BE812E000BC6E98 /* HomeController.swift */,
+				E764355E1BE82C3800BC6E98 /* SessionDelegate.swift */,
+				E76435601BE82DD200BC6E98 /* Session.swift */,
+				E764357C1BE91CF900BC6E98 /* SessionTableViewCell.swift */,
 			);
 			path = Eventerator;
 			sourceTree = "<group>";
@@ -347,12 +359,16 @@
 				E76C0C161BE7F55900064F23 /* blah.m in Sources */,
 				E7F6B9A61BC44246007EA8CF /* LoginViewController.swift in Sources */,
 				E764355D1BE812E000BC6E98 /* HomeController.swift in Sources */,
+				E764355F1BE82C3800BC6E98 /* SessionDelegate.swift in Sources */,
 				E7148B211BC2DE980084DF99 /* ViewController.swift in Sources */,
+				E764357B1BE9160100BC6E98 /* SwiftyJSON.swift in Sources */,
 				E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */,
 				E7F6B9A21BC31E90007EA8CF /* SettingsViewController.swift in Sources */,
+				E76435611BE82DD200BC6E98 /* Session.swift in Sources */,
 				E7148B271BC2DE980084DF99 /* Eventerator.xcdatamodeld in Sources */,
 				E7F6B9A01BC31E82007EA8CF /* RateSessionViewController.swift in Sources */,
 				E7F6B99C1BC316E1007EA8CF /* SessionStatsViewController.swift in Sources */,
+				E764357D1BE91CF900BC6E98 /* SessionTableViewCell.swift in Sources */,
 				E7148B1F1BC2DE980084DF99 /* AppDelegate.swift in Sources */,
 				E7F6B9A41BC44075007EA8CF /* Constants.swift in Sources */,
 			);
