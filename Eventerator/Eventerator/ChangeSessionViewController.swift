@@ -136,7 +136,9 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         
         selectedSession = Session()
         selectedSession?.name = jsonResults!["records"][indexPath.row]["Session_Name__c"].string
-        selectedSession?.avgRating = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].string
+        selectedSession?.numOfRatings = jsonResults!["records"][indexPath.row]["Num_Ratings__c"].int
+        selectedSession?.totalOfRatings = jsonResults!["records"][indexPath.row]["Total_Ratings__c"].int
+        selectedSession?.avgRating = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].double
         
         self.performSegueWithIdentifier("ratesession", sender: self)
     }
