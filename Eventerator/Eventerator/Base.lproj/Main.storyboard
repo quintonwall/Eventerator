@@ -785,10 +785,12 @@
                                                     <color key="textColor" red="0.0049800067209999997" green="0.63012075420000002" blue="0.87748748060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="session" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-RY-fbn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-RY-fbn">
                                                     <rect key="frame" x="17" y="7" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="KUZ-3b-gVp"/>
+                                                        <constraint firstAttribute="width" constant="30" id="KUZ-3b-gVp">
+                                                            <variation key="widthClass=regular" constant="40"/>
+                                                        </constraint>
                                                         <constraint firstAttribute="height" constant="30" id="RUV-O2-rFC"/>
                                                     </constraints>
                                                 </imageView>
@@ -833,6 +835,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="isLocalImage" destination="I1g-RY-fbn" id="2Ak-jr-DQ3"/>
                                             <outlet property="rating" destination="9u6-ja-WHv" id="IRm-Ww-m37"/>
                                             <outlet property="sessionName" destination="bzt-Xk-qoc" id="1Hc-4Y-3W1"/>
                                             <outlet property="speaker" destination="MaF-K4-yXx" id="qBq-Rk-RcY"/>
@@ -1084,7 +1087,6 @@
         <image name="emoticons4" width="200" height="212"/>
         <image name="emoticons5" width="200" height="212"/>
         <image name="search" width="24" height="24"/>
-        <image name="session" width="20" height="20"/>
         <image name="session-list" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
         <image name="stats" width="24" height="24"/>
@@ -1092,6 +1094,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="i8h-xz-xqG"/>
         <segue reference="HPu-BN-A7r"/>
-        <segue reference="Op1-q9-baI"/>
+        <segue reference="Snt-Tq-tvZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,6 +24,8 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     var jsonResults : Eventerator.JSON?
     var selectedSession : Session?
     
+    var localsessions = [Session]()
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -82,6 +84,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchLocalSessions()
 
        
     }
@@ -103,7 +106,28 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    
+    // MARK: Core data methods
+    func fetchLocalSessions() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Session")
+        
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            
+            for s : Session in results as! [Session] {
+                s.dump()
+                localsessions.append(s)
+                
+            }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+    }
+
     
     // MARK Table Delegates
     
@@ -124,6 +148,20 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SessionCell", forIndexPath: indexPath) as! SessionTableViewCell
+        
+        for s : Session in localsessions {
+            var id = jsonResults!["records"][indexPath.row]["Id"].string
+            var sid = s.salesforceId
+            
+            if( s.salesforceId == id) {
+                cell.userInteractionEnabled = false
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.isAlreadyLocal = true
+                cell.isLocalImage.image = UIImage(named: "cloud-download")
+                cell.backgroundColor = UIColor.lightGrayColor()
+                
+            }
+        }
         
        cell.sessionId = jsonResults!["records"][indexPath.row]["Id"].string
        cell.sessionName.text = jsonResults!["records"][indexPath.row]["Session_Name__c"].string

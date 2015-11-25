@@ -15,7 +15,9 @@ class SessionTableViewCell: UITableViewCell {
     @IBOutlet weak var speaker: UILabel!
     @IBOutlet weak var rating: UILabel!
     var sessionId : String!
+    var isAlreadyLocal : Bool = false 
     
+    @IBOutlet weak var isLocalImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
