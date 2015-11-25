@@ -16,6 +16,7 @@
 		E7148B2C1BC2DE980084DF99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7148B2A1BC2DE980084DF99 /* LaunchScreen.storyboard */; };
 		E7148B371BC2DE980084DF99 /* EventeratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B361BC2DE980084DF99 /* EventeratorTests.swift */; };
 		E7148B421BC2DE980084DF99 /* EventeratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7148B411BC2DE980084DF99 /* EventeratorUITests.swift */; };
+		E739ED731C063D7D002F91DF /* LocalSessionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739ED721C063D7D002F91DF /* LocalSessionViewCell.swift */; };
 		E764355D1BE812E000BC6E98 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764355C1BE812E000BC6E98 /* HomeController.swift */; };
 		E764355F1BE82C3800BC6E98 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764355E1BE82C3800BC6E98 /* SessionDelegate.swift */; };
 		E76435611BE82DD200BC6E98 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76435601BE82DD200BC6E98 /* Session.swift */; };
@@ -99,6 +100,7 @@
 		E7148B3D1BC2DE980084DF99 /* EventeratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventeratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7148B411BC2DE980084DF99 /* EventeratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventeratorUITests.swift; sourceTree = "<group>"; };
 		E7148B431BC2DE980084DF99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E739ED721C063D7D002F91DF /* LocalSessionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSessionViewCell.swift; sourceTree = "<group>"; };
 		E764355C1BE812E000BC6E98 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		E764355E1BE82C3800BC6E98 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		E76435601BE82DD200BC6E98 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				E76435601BE82DD200BC6E98 /* Session.swift */,
 				E764357C1BE91CF900BC6E98 /* SessionTableViewCell.swift */,
 				E76435C71BF160BF00BC6E98 /* Double.swift */,
+				E739ED721C063D7D002F91DF /* LocalSessionViewCell.swift */,
 			);
 			path = Eventerator;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				E7F6B99C1BC316E1007EA8CF /* SessionStatsViewController.swift in Sources */,
 				E76435A91BF1082000BC6E98 /* AsyncImageView.swift in Sources */,
 				E76435B01BF1082000BC6E98 /* DesignableTextField.swift in Sources */,
+				E739ED731C063D7D002F91DF /* LocalSessionViewCell.swift in Sources */,
 				E76435C81BF160BF00BC6E98 /* Double.swift in Sources */,
 				E76435C01BF1082000BC6E98 /* SpringTextView.swift in Sources */,
 				E764357D1BE91CF900BC6E98 /* SessionTableViewCell.swift in Sources */,

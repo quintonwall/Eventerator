@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 
 
@@ -134,11 +135,17 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         NSLog("You selected cell number: \(indexPath.row)!")
         
-        selectedSession = Session()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        selectedSession = NSEntityDescription.insertNewObjectForEntityForName("Session", inManagedObjectContext: managedContext) as! Session
+        
+        selectedSession?.salesforceId = jsonResults!["records"][indexPath.row]["Id"].string
         selectedSession?.name = jsonResults!["records"][indexPath.row]["Session_Name__c"].string
         selectedSession?.numOfRatings = jsonResults!["records"][indexPath.row]["Num_Ratings__c"].int
         selectedSession?.totalOfRatings = jsonResults!["records"][indexPath.row]["Total_Ratings__c"].int
-        selectedSession?.avgRating = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].double
+        selectedSession?.averageRating = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].double
         
         self.performSegueWithIdentifier("ratesession", sender: self)
     }

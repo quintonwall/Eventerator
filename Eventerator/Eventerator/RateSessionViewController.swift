@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import CoreData
 
 class RateSessionViewController: UIViewController {
 
@@ -48,16 +49,18 @@ class RateSessionViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        currentSession!.dump()
-        sessionName.text = currentSession?.name
-        avgRating.text = currentSession?.avgRatingAsNonOptionalString()
-        rating1.tag = 1
-        rating2.tag = 2
-        rating3.tag = 3
-        rating4.tag = 4
-        rating5.tag = 5
-        
-        alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("button-09", ofType: "wav")!)
+        if SFAuthenticationManager.sharedManager().haveValidSession {
+            currentSession!.dump()
+            sessionName.text = currentSession?.name
+            avgRating.text = currentSession?.avgRatingAsNonOptionalString()
+            rating1.tag = 1
+            rating2.tag = 2
+            rating3.tag = 3
+            rating4.tag = 4
+            rating5.tag = 5
+            
+            alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("button-09", ofType: "wav")!)
+        }
     }
     
     override func viewDidLoad() {
@@ -81,7 +84,7 @@ class RateSessionViewController: UIViewController {
             btn.animation = "squeeze"  //need to reset the animation style here otherwise, the animation only occurs once
             btn.animate()
             currentSession?.addRating(tag)
-            currentSession?.dump()
+            updateSession()
             avgRating.text = currentSession?.avgRatingAsNonOptionalString() 
           
             ratingSpringView.animation = "squeezeUp"
@@ -96,9 +99,28 @@ class RateSessionViewController: UIViewController {
     }
     
     
-    func updateRating(rating: Int) {
-     
+
+    
+    func updateSession() {
+        //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        //let managedContext = appDelegate.managedObjectContext
+        
+       //let entity =  NSEntityDescription.entityForName("Session", inManagedObjectContext:managedContext)
+       
+       
+        
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            
+            do {
+                try managedObjectContext.save()
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+            
+        }
     }
+    
     
     /*
     // MARK: - Navigation

@@ -26,6 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+       
+        
+        //QRW: Added this to dump out the location of the sqlite db so we can use SQL Manager to view it
+        let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        print("*** SQLite Location: \(paths[0])")
+        
+        
         SFLogger.setLogLevel(SFLogLevelDebug)
         
         SalesforceSDKManager.sharedManager().connectedAppId = RemoteAccessConsumerKey

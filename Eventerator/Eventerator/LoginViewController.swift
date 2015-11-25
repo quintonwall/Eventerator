@@ -8,7 +8,6 @@
 
 import UIKit
 
-import Alamofire
 
 
 class LoginViewController: UIViewController,SFAuthenticationManagerDelegate {
@@ -33,10 +32,12 @@ class LoginViewController: UIViewController,SFAuthenticationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        
     }
     
     @IBAction func loginTapped(sender: AnyObject) {
+        print("login button tapped")
         SalesforceSDKManager.sharedManager().launch()
     }
     
