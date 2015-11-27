@@ -50,6 +50,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         resultsTable.delegate = self
         resultsTable.dataSource = self
         
+        
     }
     
      func textFieldShouldReturn(textField: UITextField) -> Bool{
@@ -82,10 +83,13 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+   
+        super.viewWillAppear(animated)
+        //clear old results from the table
+       jsonResults = nil
         fetchLocalSessions()
-
+        self.resultsTable.reloadData()
        
     }
 
@@ -186,6 +190,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         selectedSession?.previousNumberOfRatingsFromCloud = jsonResults!["records"][indexPath.row]["Total_Ratings__c"].int
         selectedSession?.averageRating = jsonResults!["records"][indexPath.row]["Average_Rating__c"].double
         
-        self.performSegueWithIdentifier("ratesession", sender: self)
+        self.tabBarController?.selectedIndex = 0
+        self.performSegueWithIdentifier("localsessions", sender: self)
     }
 }
