@@ -1,6 +1,7 @@
 //
 //  Session.swift
 //  Eventerator
+// track a batch of ratings. This gets reset whenever we sync
 //
 //  Created by Quinton Wall on 11/2/15.
 //  Copyright © 2015 Quinton Wall. All rights reserved.
@@ -18,6 +19,7 @@ class Session:NSManagedObject {
     var speakers = [String]()
     @NSManaged var numOfRatings: NSNumber!
     @NSManaged var totalOfRatings: NSNumber!
+    @NSManaged var previousNumberOfRatingsFromCloud: NSNumber!
     
     @NSManaged var averageRating: NSNumber!
     
@@ -31,9 +33,26 @@ class Session:NSManagedObject {
     }
     
     func dump() {
-        print("CURRENT SESSION: name=\(name), num ratings=\(numOfRatings), total ratings=\(totalOfRatings), avg rating=\(averageRating)")
+        print("CURRENT SESSION: name=\(name), num ratings=\(numOfRatings), total ratings since sync=\(previousNumberOfRatingsFromCloud), avg rating in batch=\(averageRating)")
     }
     
+    //mobile sdk likes an NSDictionary to insert into salesforce
+    func getDictionaryForCloudInsert() -> NSDictionary {
+        let d : NSDictionary = [
+            "Session__c" : salesforceId!,
+            "Total_Ratings_in_Batch__c" : totalOfRatings!,
+            "Averate_Rating_For_Batch__c" : numOfRatings!,
+            "Number_of_Ratings_in_Batch__c" : averageRating!,
+            "Device_Identifier__c" : UIDevice.currentDevice().identifierForVendor!.description
+        
+        ]
+        
+        return d
+    }
+    
+    func numberAsNonOptionalString(value: NSNumber) -> String {
+        return String(value)
+    }
     
     func avgRatingAsNonOptionalString() -> String {
         //use the double extension to round

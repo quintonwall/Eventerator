@@ -61,7 +61,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         
         //SessionDelegate.searchForSession(speakerNameTF.text!, sessionname: sessionNameTF.text!)
         
-        let request = SFRestAPI.sharedInstance().requestForQuery("select Average_Ratings__c, Event__r.Event_Name__c, Id, Name, Num_Ratings__c, Session_Name__c, SystemModstamp, Total_Ratings__c from Session__c WHERE Session_Name__c like \'%\(sessionNameTF.text!)%\' ORDER BY Session_Name__c")
+        let request = SFRestAPI.sharedInstance().requestForQuery("select Average_Rating__c, Event__r.Event_Name__c, Id, Name, Number_of_Ratings__c, Session_Name__c, SystemModstamp, Total_Ratings__c from Session__c WHERE Session_Name__c like \'%\(sessionNameTF.text!)%\' ORDER BY Session_Name__c")
         
         SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
             print("Problem getting sessions \(error)")
@@ -165,7 +165,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         
        cell.sessionId = jsonResults!["records"][indexPath.row]["Id"].string
        cell.sessionName.text = jsonResults!["records"][indexPath.row]["Session_Name__c"].string
-       cell.rating.text = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].string
+       cell.rating.text = jsonResults!["records"][indexPath.row]["Average_Rating__c"].string
  
         return cell
     }
@@ -181,9 +181,9 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         
         selectedSession?.salesforceId = jsonResults!["records"][indexPath.row]["Id"].string
         selectedSession?.name = jsonResults!["records"][indexPath.row]["Session_Name__c"].string
-        selectedSession?.numOfRatings = jsonResults!["records"][indexPath.row]["Num_Ratings__c"].int
-        selectedSession?.totalOfRatings = jsonResults!["records"][indexPath.row]["Total_Ratings__c"].int
-        selectedSession?.averageRating = jsonResults!["records"][indexPath.row]["Average_Ratings__c"].double
+        //selectedSession?.numOfRatings = jsonResults!["records"][indexPath.row]["Number_of_Ratings__c"].int
+        selectedSession?.previousNumberOfRatingsFromCloud = jsonResults!["records"][indexPath.row]["Total_Ratings__c"].int
+        selectedSession?.averageRating = jsonResults!["records"][indexPath.row]["Average_Rating__c"].double
         
         self.performSegueWithIdentifier("ratesession", sender: self)
     }

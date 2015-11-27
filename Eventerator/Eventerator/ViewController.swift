@@ -135,13 +135,60 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
      func continueRatingTapped(sender: UIButton) {
         
-        selectedSession = sessions[sender.tag]
+         selectedSession = sessions[sender.tag]
+    
         self.performSegueWithIdentifier("ratesession", sender: self)
         
     }
     
-    func syncToCloud(sender: UIButton) {
+    func syncToCloudTapped(sender: UIButton) {
         
+        selectedSession = sessions[sender.tag]
+        
+        //insert into salesforce
+        
+        let d : NSDictionary = selectedSession!.getDictionaryForCloudInsert()
+        let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Session_Rating_Batch__c", fields: d as! [NSObject : AnyObject])
+        
+        SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
+           
+            let alertController = UIAlertController(title: "Eventerator", message:   "Something went wrong: \(error)", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+            }) {response in
+                print("Synced batch to cloud. Now removing from local stores")
+                //now clear from core data
+                
+                if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+                    
+                    managedObjectContext.deleteObject(self.selectedSession!)
+                    do {
+                        try managedObjectContext.save()
+                    } catch let error as NSError  {
+                        print("Could not delete \(error), \(error.userInfo)")
+                    }
+                    
+                }
+                
+                //then remove from local and reload table
+                self.sessions.removeAtIndex(sender.tag)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.sessionsCollectionView.reloadData()
+                })
+         
+     
+                //show confirmation box.
+                 let alertController = UIAlertController(title: "Eventerator", message:   "Batch synced. Nice job!", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+    
+    
+        }
+
     }
 }
 

@@ -53,6 +53,8 @@ class RateSessionViewController: UIViewController {
             currentSession!.dump()
             sessionName.text = currentSession?.name
             avgRating.text = currentSession?.avgRatingAsNonOptionalString()
+            ratingDescriptor.text = " OUT OF \(currentSession!.numOfRatings!) RATINGS"
+            
             rating1.tag = 1
             rating2.tag = 2
             rating3.tag = 3
@@ -60,6 +62,8 @@ class RateSessionViewController: UIViewController {
             rating5.tag = 5
             
             alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("button-09", ofType: "wav")!)
+            
+            
         }
     }
     
@@ -85,7 +89,8 @@ class RateSessionViewController: UIViewController {
             btn.animate()
             currentSession?.addRating(tag)
             updateSession()
-            avgRating.text = currentSession?.avgRatingAsNonOptionalString() 
+            avgRating.text = currentSession?.avgRatingAsNonOptionalString()
+            ratingDescriptor.text = " OUT OF \(currentSession!.numOfRatings!) RATINGS"
           
             ratingSpringView.animation = "squeezeUp"
             ratingSpringView.animate()
