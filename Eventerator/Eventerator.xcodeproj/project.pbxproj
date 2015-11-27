@@ -57,6 +57,7 @@
 		E76435C61BF10B9200BC6E98 /* button-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = E76435C51BF10B9200BC6E98 /* button-09.wav */; };
 		E76435C81BF160BF00BC6E98 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76435C71BF160BF00BC6E98 /* Double.swift */; };
 		E76C0C161BE7F55900064F23 /* blah.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C0C151BE7F55900064F23 /* blah.m */; };
+		E798E0D31C08D1C7009B7D6D /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798E0D21C08D1C7009B7D6D /* HomeTabBarController.swift */; };
 		E7F6B99C1BC316E1007EA8CF /* SessionStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99B1BC316E1007EA8CF /* SessionStatsViewController.swift */; };
 		E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */; };
 		E7F6B9A01BC31E82007EA8CF /* RateSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */; };
@@ -143,6 +144,7 @@
 		E76435C71BF160BF00BC6E98 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		E76C0C141BE7F55800064F23 /* Eventerator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eventerator-Bridging-Header.h"; sourceTree = "<group>"; };
 		E76C0C151BE7F55900064F23 /* blah.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blah.m; sourceTree = "<group>"; };
+		E798E0D21C08D1C7009B7D6D /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		E7F6B99B1BC316E1007EA8CF /* SessionStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStatsViewController.swift; sourceTree = "<group>"; };
 		E7F6B99D1BC31949007EA8CF /* ChangeSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSessionViewController.swift; sourceTree = "<group>"; };
 		E7F6B99F1BC31E82007EA8CF /* RateSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateSessionViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				E764357C1BE91CF900BC6E98 /* SessionTableViewCell.swift */,
 				E76435C71BF160BF00BC6E98 /* Double.swift */,
 				E739ED721C063D7D002F91DF /* LocalSessionViewCell.swift */,
+				E798E0D21C08D1C7009B7D6D /* HomeTabBarController.swift */,
 			);
 			path = Eventerator;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				E76435A81BF1082000BC6E98 /* AsyncButton.swift in Sources */,
 				E76435C41BF1082000BC6E98 /* UnwindSegue.swift in Sources */,
 				E7F6B99E1BC31949007EA8CF /* ChangeSessionViewController.swift in Sources */,
+				E798E0D31C08D1C7009B7D6D /* HomeTabBarController.swift in Sources */,
 				E7F6B9A21BC31E90007EA8CF /* SettingsViewController.swift in Sources */,
 				E76435AE1BF1082000BC6E98 /* DesignableLabel.swift in Sources */,
 				E76435C31BF1082000BC6E98 /* TransitionZoom.swift in Sources */,
