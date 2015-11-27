@@ -26,6 +26,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         if  !SFAuthenticationManager.sharedManager().haveValidSession {
             self.performSegueWithIdentifier("login", sender: self)
+        } else {
+            if sessions.isEmpty {
+                
+                let alertController = UIAlertController(title: "Eventerator", message:   "You dont have any local sessions. What are you waiting for? Go search for a session in the cloud and start rating!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let okAction = UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Default) {
+                    UIAlertAction in
+                    self.performSegueWithIdentifier("searchsessions", sender: self)
+                }
+                
+                alertController.addAction(okAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                
+            }
         }
 
     }

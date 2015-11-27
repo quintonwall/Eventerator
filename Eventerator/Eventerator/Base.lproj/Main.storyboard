@@ -229,6 +229,7 @@
                         <outlet property="sessionsCollectionView" destination="2Dk-C9-9Be" id="QMi-AA-lNc"/>
                         <segue destination="szs-oB-aNB" kind="presentation" identifier="login" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="yu9-2k-gf3"/>
                         <segue destination="EhR-q8-lIR" kind="show" identifier="ratesession" action="showDetailViewController:sender:" id="9XM-ae-Kib"/>
+                        <segue destination="lfj-HT-EoX" kind="show" identifier="searchsessions" id="vWG-Dm-eEP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1105,7 +1106,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="i8h-xz-xqG"/>
-        <segue reference="HPu-BN-A7r"/>
-        <segue reference="Snt-Tq-tvZ"/>
+        <segue reference="9XM-ae-Kib"/>
+        <segue reference="vWG-Dm-eEP"/>
+        <segue reference="yu9-2k-gf3"/>
     </inferredMetricsTieBreakers>
 </document>
