@@ -7,7 +7,6 @@
 //
 //  Created by Quinton Wall on 10/5/15.
 //  Copyright © 2015 Quinton Wall. All rights reserved.
-//  Uses https://github.com/PhamBaTho/BTNavigationDropdownMenu
 //
 
 import UIKit
@@ -33,6 +32,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 
                 let okAction = UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Default) {
                     UIAlertAction in
+                    self.tabBarController?.selectedIndex = 2 //searh sessions tab
                     self.performSegueWithIdentifier("searchsessions", sender: self)
                 }
                 
@@ -79,6 +79,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // MARK: Core data methods
     func fetchLocalSessions() {
+        
+        //remove existing in state sessions, before fetching
+        sessions = [Session]()
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
@@ -152,6 +156,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
      func continueRatingTapped(sender: UIButton) {
         
          selectedSession = sessions[sender.tag]
+        
+       // self.tabBarController?.selectedIndex = 4
     
         self.performSegueWithIdentifier("ratesession", sender: self)
         

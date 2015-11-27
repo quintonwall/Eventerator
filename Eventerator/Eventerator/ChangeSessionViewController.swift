@@ -108,6 +108,8 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     
     // MARK: Core data methods
     func fetchLocalSessions() {
+        
+        localsessions = [Session]()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
@@ -140,7 +142,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if jsonResults == nil {
-            return 1
+            return 0
         } else {
             return self.jsonResults!["totalSize"].int!
         }
@@ -149,9 +151,8 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SessionCell", forIndexPath: indexPath) as! SessionTableViewCell
         
-        for s : Session in localsessions {
-            var id = jsonResults!["records"][indexPath.row]["Id"].string
-            var sid = s.salesforceId
+               for s : Session in localsessions {
+            let id = jsonResults!["records"][indexPath.row]["Id"].string
             
             if( s.salesforceId == id) {
                 cell.userInteractionEnabled = false
