@@ -41,8 +41,8 @@ class Session:NSManagedObject {
         let d : NSDictionary = [
             "Session__c" : salesforceId!,
             "Total_Ratings_in_Batch__c" : totalOfRatings!,
-            "Averate_Rating_For_Batch__c" : numOfRatings!,
-            "Number_of_Ratings_in_Batch__c" : averageRating!,
+            "Averate_Rating_For_Batch__c" : averageRating!,
+            "Number_of_Ratings_in_Batch__c" : numOfRatings!,
             "Device_Identifier__c" : UIDevice.currentDevice().identifierForVendor!.description
         
         ]
