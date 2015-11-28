@@ -86,6 +86,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
     override func viewWillAppear(animated: Bool) {
    
         super.viewWillAppear(animated)
+         self.tabBarController?.selectedIndex = 2 //searh sessions tab
         //clear old results from the table
        jsonResults = nil
         fetchLocalSessions()
@@ -190,7 +191,7 @@ class ChangeSessionViewController: UIViewController, UITableViewDataSource, UITa
         selectedSession?.previousNumberOfRatingsFromCloud = jsonResults!["records"][indexPath.row]["Total_Ratings__c"].int
         selectedSession?.averageRating = jsonResults!["records"][indexPath.row]["Average_Rating__c"].double
         
-        self.tabBarController?.selectedIndex = 0
+       
         self.performSegueWithIdentifier("localsessions", sender: self)
     }
 }

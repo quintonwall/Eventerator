@@ -34,19 +34,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     UIAlertAction in
                     self.tabBarController?.selectedIndex = 2 //searh sessions tab
                     self.performSegueWithIdentifier("searchsessions", sender: self)
+                    
                 }
                 
                 alertController.addAction(okAction)
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
-                
-                
             }
+               
         }
 
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         //fetch the existing, not synced records from core data
         if  SFAuthenticationManager.sharedManager().haveValidSession {
             sessionsCollectionView.userInteractionEnabled = true
@@ -103,14 +104,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
-    func syncSessionWithSalesforce() {
-        
-    }
-    
-    func deleteLocalSession() {
-        
-    }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "ratesession") {
@@ -156,10 +149,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
      func continueRatingTapped(sender: UIButton) {
         
          selectedSession = sessions[sender.tag]
-        
-       // self.tabBarController?.selectedIndex = 4
-    
-        self.performSegueWithIdentifier("ratesession", sender: self)
+         self.performSegueWithIdentifier("ratesession", sender: self)
         
     }
     
@@ -202,13 +192,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
          
      
                 //show confirmation box.
-                 let alertController = UIAlertController(title: "Eventerator", message:   "Batch synced. Nice job!", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
-                
-    
-    
+                // let alertController = UIAlertController(title: "Eventerator", message:   "Batch synced. Nice job!", preferredStyle: UIAlertControllerStyle.Alert)
+               // alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+               // self.presentViewController(alertController, animated: true, completion: nil)
         }
 
     }
