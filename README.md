@@ -10,3 +10,16 @@ The following list of enhancements are planned:
 - Clean up UI and add better graphics, color schemes etc.
 - Implement per app stats: all time ratings collected, time open etc.
 - Update settings to allow further configuration options.
+
+## Getting Started
+
+### Install the Eventerator Schema
+Install the Eventerator schema into your instance of Salesforce using ![this unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tG0000000TcQz).
+
+###Create a Connected App Endpoint
+Within Salesforce Setup, navigate to Create->Apps->Connected Apps, and click New. Give your app a name, contact email, and check API(Enable OAuth Settings).
+For the OAuth settings set the callback url to mobile://success, and the Manage and access your data(api) permission. Then save.
+Once your app has been saved, copy the consumer key to the clipboard. We will need that in a minute to configure our app.
+
+###Configure the app
+Clone this repo and open Eventerator.xcworkspace in XCode. Navigate to AppDelegate.swift and replace the consumer key with the value from your clipboard. Save your change, and you are ready to go! Just remember to add some Sessions to your app via Salesforce. Eventerator does not provide the ability to create new sessions from the mobile app, only add ratings to existing session.
