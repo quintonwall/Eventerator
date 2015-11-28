@@ -14,7 +14,7 @@ The following list of enhancements are planned:
 ## Getting Started
 
 ### Install the Eventerator Schema
-Install the Eventerator schema into your instance of Salesforce using ![this unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tG0000000TcQz).
+Install the Eventerator schema into your instance of Salesforce using [this unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tG0000000TcQz).
 
 ###Create a Connected App Endpoint
 Within Salesforce Setup, navigate to Create->Apps->Connected Apps, and click New. Give your app a name, contact email, and check API(Enable OAuth Settings).
