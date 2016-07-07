@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-import OAuthSwift
+
+
 
 
 @UIApplicationMain
@@ -33,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("*** SQLite Location: \(paths[0])")
         
         
-        SFLogger.setLogLevel(SFLogLevelDebug)
+        SFLogger.setLogLevel(SFLogLevel.Debug)
         
         SalesforceSDKManager.sharedManager().connectedAppId = RemoteAccessConsumerKey
         SalesforceSDKManager.sharedManager().connectedAppCallbackUri = OAuthRedirectURI
@@ -41,15 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SalesforceSDKManager.sharedManager().postLaunchAction = {
             [unowned self] (launchActionList: SFSDKLaunchAction) in
             let launchActionString = SalesforceSDKManager.launchActionsStringRepresentation(launchActionList)
-            self.log(SFLogLevelInfo, msg:"Post-launch: launch actions taken: \(launchActionString)");
+            self.log(SFLogLevel.Info, msg:"Post-launch: launch actions taken: \(launchActionString)");
             
         }
         SalesforceSDKManager.sharedManager().launchErrorAction = {
             [unowned self] (error: NSError?, launchActionList: SFSDKLaunchAction) in
             if let actualError = error {
-                self.log(SFLogLevelError, msg:"Error during SDK launch: \(actualError.localizedDescription)")
+                self.log(SFLogLevel.Error, msg:"Error during SDK launch: \(actualError.localizedDescription)")
             } else {
-                self.log(SFLogLevelError, msg:"Unknown error during SDK launch.")
+                self.log(SFLogLevel.Error, msg:"Unknown error during SDK launch.")
             }
         }
         SalesforceSDKManager.sharedManager().postLogoutAction = {

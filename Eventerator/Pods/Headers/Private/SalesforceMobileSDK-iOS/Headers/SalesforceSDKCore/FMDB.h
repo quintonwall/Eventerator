@@ -1,1 +1,0 @@
-../../../../../SalesforceMobileSDK-iOS/external/fmdb/src/fmdb/FMDB.h

@@ -1,1 +1,0 @@
-../../../../../SalesforceMobileSDK-iOS/external/ThirdPartyDependencies/SalesforceCommonUtils/Headers/SalesforceCommonUtils/NSDictionary+SFAdditions.h

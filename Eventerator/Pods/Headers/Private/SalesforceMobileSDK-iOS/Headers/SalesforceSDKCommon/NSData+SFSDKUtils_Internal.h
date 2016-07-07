@@ -1,1 +1,0 @@
-../../../../../SalesforceMobileSDK-iOS/libs/SalesforceSDKCommon/SalesforceSDKCommon/Classes/NSData+SFSDKUtils_Internal.h

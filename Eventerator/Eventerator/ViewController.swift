@@ -11,6 +11,7 @@
 
 import UIKit
 import CoreData
+import SalesforceRestAPI
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     

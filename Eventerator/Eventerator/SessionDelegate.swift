@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import SalesforceRestAPI
 
 
 class SessionDelegate {
